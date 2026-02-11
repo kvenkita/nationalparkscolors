@@ -1,6 +1,8 @@
 # National Parks Colors 🏞️
 
-https://kvenkita.github.io/nationalparkscolors/palette_showcase.html
+## [Visual Palette Showcase](https://kvenkita.github.io/nationalparkscolors/palette_showcase.html)
+
+## [Visualization Gallery with the palettes](https://kvenkita.github.io/nationalparkscolors/visualization_gallery.html)
 
 > "In every walk with nature, one receives far more than he seeks." - John Muir
 
