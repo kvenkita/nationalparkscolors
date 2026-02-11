@@ -1,0 +1,323 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "figure/",
+  fig.height = 1
+)
+```
+
+# National Parks Colors
+
+> "In every walk with nature, one receives far more than he seeks." - John Muir
+
+Bring the beauty of America's National Parks to your data visualizations! This package provides 20 carefully crafted color palettes inspired by the natural landscapes, geology, and ecosystems of popular US National Parks.
+
+Each palette captures the essence of its park through colors drawn from iconic features: the geothermal wonders of Yellowstone, the layered rock formations of the Grand Canyon, the granite cliffs of Yosemite, and more.
+
+## Installation
+
+```r
+# Install from GitHub
+devtools::install_github("kvenkita/nationalparkscolors")
+```
+
+## Usage
+
+```{r, palettes_list}
+library("nationalparkscolors")
+
+# See all available palettes
+names(natparks_palettes)
+```
+
+## The Palettes
+
+### Yellowstone National Park
+*Geothermal features, geysers, hot springs, bison, and forests*
+
+Capturing the golden bacterial mats of hot springs, deep blue pools, orange-brown bison, grey-white steam, and evergreen forests.
+
+```{r, yellowstone}
+natparks_palette("Yellowstone")
+```
+
+### Grand Canyon National Park
+*Layered sedimentary rock formations from rim to river*
+
+Colors from the iconic red rock layers, terracotta cliffs, sandy beige formations, dusty rose, and deep canyon shadows.
+
+```{r, grandcanyon}
+natparks_palette("GrandCanyon")
+```
+
+### Yosemite National Park
+*Granite cliffs, waterfalls, meadows, and giant sequoias*
+
+Granite grey of Half Dome, waterfall mist blue, meadow greens, deep pine, and sunset glow on El Capitan.
+
+```{r, yosemite}
+natparks_palette("Yosemite")
+```
+
+### Zion National Park
+*Red rock canyons, Virgin River, and desert flora*
+
+Navajo sandstone red, canyon shadows, river blue-green, desert sage, and burnt sienna.
+
+```{r, zion}
+natparks_palette("Zion")
+```
+
+### Acadia National Park
+*Coastal Maine, granite shores, forests, and ocean*
+
+Atlantic ocean blue, coastal granite grey, pink granite, forest green, and lighthouse white.
+
+```{r, acadia}
+natparks_palette("Acadia")
+```
+
+### Rocky Mountain National Park
+*Alpine tundra, wildflowers, and snow-capped peaks*
+
+Sky blue, pristine snow, alpine wildflower purple, tundra green, and mountain grey.
+
+```{r, rockymountain}
+natparks_palette("RockyMountain")
+```
+
+### Great Smoky Mountains National Park
+*Misty mountains, diverse forests, and wildflowers*
+
+Blue mountain mist, forest green, rhododendron pink, autumn orange, and deep forest shadows.
+
+```{r, smokies}
+natparks_palette("Smokies")
+```
+
+### Glacier National Park
+*Glacial lakes, mountains, and the Going-to-the-Sun Road*
+
+Glacial turquoise lakes, mountain grey, wildflower magenta, rocky brown, and dense forest green.
+
+```{r, glacier}
+natparks_palette("Glacier")
+```
+
+### Olympic National Park
+*Rainforest, Pacific coast, and mountains*
+
+Moss green of the Hoh Rainforest, grey-blue Pacific, rain clouds, coastal rocks, and bright ferns.
+
+```{r, olympic}
+natparks_palette("Olympic")
+```
+
+### Arches National Park
+*Red rock formations and natural stone arches*
+
+Entrada sandstone red, desert sand, arch shadows, evening sky, and oxidized rock formations.
+
+```{r, arches}
+natparks_palette("Arches")
+```
+
+### Joshua Tree National Park
+*Distinctive desert trees and surreal rock formations*
+
+Desert tan, Joshua tree green, granite formations, sunset pink, and star-filled night sky.
+
+```{r, joshuatree}
+natparks_palette("JoshuaTree")
+```
+
+### Everglades National Park
+*Wetlands, sawgrass marshes, and diverse wildlife*
+
+Sawgrass green, tannin-stained water, sunset orange, white ibis, and mangrove forests.
+
+```{r, everglades}
+natparks_palette("Everglades")
+```
+
+### Bryce Canyon National Park
+*Hoodoos (rock spires) and unique erosion patterns*
+
+Orange-red hoodoos, pink limestone, cream formations, iron-stained red, and shadow purple.
+
+```{r, brycecanyon}
+natparks_palette("BryceCanyon")
+```
+
+### Grand Teton National Park
+*Jagged mountain peaks, alpine lakes, and meadows*
+
+Teton peak grey, Jackson Lake blue, wildflower yellow, aspen gold, and evergreen forest.
+
+```{r, grandteton}
+natparks_palette("GrandTeton")
+```
+
+### Shenandoah National Park
+*Blue Ridge Mountains, forests, and waterfalls*
+
+Blue ridge haze, mountain laurel pink, autumn red, forest green, and weathered rock grey.
+
+```{r, shenandoah}
+natparks_palette("Shenandoah")
+```
+
+### Denali National Park
+*Alaska's highest peak, tundra, and wildlife*
+
+Snow-capped peaks, tundra brown-green, clear sky blue, autumn tundra red, and mountain shadows.
+
+```{r, denali}
+natparks_palette("Denali")
+```
+
+### Sequoia National Park
+*Giant sequoia trees and Sierra Nevada mountains*
+
+Sequoia bark red-brown, forest floor, bark texture, mountain granite, and sky through the canopy.
+
+```{r, sequoia}
+natparks_palette("Sequoia")
+```
+
+### Crater Lake National Park
+*Deepest lake in the United States*
+
+Deep crater lake blue (one of the bluest waters in the world), caldera rim grey, sky reflection, volcanic rock, and pristine snow.
+
+```{r, craterlake}
+natparks_palette("CraterLake")
+```
+
+### Death Valley National Park
+*Extreme desert, salt flats, and colorful badlands*
+
+White salt flats, Artist's Palette pink, desert gold, volcanic black rocks, and oxidized green minerals.
+
+```{r, deathvalley}
+natparks_palette("DeathValley")
+```
+
+### Badlands National Park
+*Layered rock formations and mixed-grass prairie*
+
+Yellow mounds, eroded pink-red formations, prairie grass, layered grey sediments, and sunset gold.
+
+```{r, badlands}
+natparks_palette("Badlands")
+```
+
+## Using with ggplot2
+
+```{r, ggplot_example, fig.height = 3}
+library("ggplot2")
+
+# Discrete colors
+ggplot(mtcars, aes(factor(cyl), fill = factor(vs))) +
+  geom_bar() +
+  scale_fill_manual(values = natparks_palette("Glacier")) +
+  theme_minimal() +
+  labs(title = "Using Glacier National Park palette")
+```
+
+```{r, ggplot_scatter, fig.height = 3}
+# Continuous colors
+ggplot(mtcars, aes(wt, mpg, color = hp)) +
+  geom_point(size = 3) +
+  scale_color_gradientn(colors = natparks_palette("CraterLake", type = "continuous")) +
+  theme_minimal() +
+  labs(title = "Using Crater Lake palette (continuous)")
+```
+
+## Advanced Usage
+
+### Interpolating Colors
+
+```{r, continuous_example, fig.height = 3}
+# Create a continuous palette with more colors
+pal <- natparks_palette(100, name = "Yosemite", type = "continuous")
+image(volcano, col = pal, main = "Yosemite palette on volcano data")
+```
+
+### Heatmaps
+
+```{r, heatmap_example, fig.height = 4, eval = FALSE}
+# Using with heatmaps
+library(ggplot2)
+
+# Create sample heatmap data
+df <- expand.grid(X = 1:12, Y = 1:12)
+df$value <- runif(144)
+
+pal <- natparks_palette("GrandCanyon", 100, type = "continuous")
+ggplot(df, aes(x = X, y = Y, fill = value)) +
+  geom_tile() +
+  scale_fill_gradientn(colours = pal) +
+  coord_equal() +
+  theme_minimal() +
+  labs(title = "Grand Canyon palette heatmap")
+```
+
+## Color Theory & Design
+
+Each palette was designed with careful attention to:
+
+- **Color Harmony**: Colors work well together using complementary, analogous, or triadic relationships
+- **Perceptual Uniformity**: Colors are distinguishable and accessible
+- **Data Visualization**: Palettes work for both categorical (discrete) and continuous data
+- **Natural Inspiration**: Colors authentically represent each park's unique character
+
+## Palette Details
+
+| Park | Colors | Key Features Represented |
+|------|--------|--------------------------|
+| Yellowstone | 5 | Geothermal features, hot springs, wildlife, forests |
+| Grand Canyon | 5 | Layered sedimentary rocks from rim to river |
+| Yosemite | 5 | Granite cliffs, waterfalls, meadows, sequoias |
+| Zion | 5 | Red rock canyons, Virgin River, desert flora |
+| Acadia | 5 | Coastal ocean, granite shores, forests |
+| Rocky Mountain | 5 | Alpine tundra, wildflowers, snow-capped peaks |
+| Smokies | 5 | Blue mist, diverse forests, wildflowers |
+| Glacier | 5 | Glacial lakes, mountains, wildflowers |
+| Olympic | 5 | Rainforest, Pacific coast, mountains |
+| Arches | 5 | Red rock formations, natural arches |
+| Joshua Tree | 5 | Desert landscape, distinctive trees, night sky |
+| Everglades | 5 | Wetlands, sawgrass, mangroves |
+| Bryce Canyon | 5 | Hoodoos, pink limestone formations |
+| Grand Teton | 5 | Jagged peaks, alpine lakes, meadows |
+| Shenandoah | 5 | Blue Ridge Mountains, forests, wildflowers |
+| Denali | 5 | Highest peak, tundra, Alaska wilderness |
+| Sequoia | 5 | Giant sequoia trees, Sierra Nevada |
+| Crater Lake | 5 | Deepest blue lake, volcanic caldera |
+| Death Valley | 5 | Extreme desert, salt flats, badlands |
+| Badlands | 5 | Layered formations, prairie grasslands |
+
+## Contributing
+
+Contributions are welcome! If you'd like to suggest improvements to existing palettes or propose new parks, please open an issue or pull request.
+
+## License
+
+MIT License
+
+## Acknowledgments
+
+Inspired by the natural beauty of America's National Parks and the excellent [Wes Anderson Palettes](https://github.com/karthik/wesanderson) package.
+
+## Support
+
+If you find this package useful, consider supporting the National Park Foundation to help preserve these incredible landscapes for future generations.

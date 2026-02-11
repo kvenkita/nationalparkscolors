@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Parks Colors - Visual Palette Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            padding: 40px;
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .intro h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .palettes {
+            padding: 40px;
+        }
+        
+        .palette-card {
+            margin-bottom: 50px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .palette-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .palette-header {
+            padding: 20px 25px;
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .palette-header h3 {
+            color: #2c3e50;
+            font-size: 1.6em;
+            margin-bottom: 8px;
+        }
+        
+        .palette-header p {
+            color: #6b7280;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        .color-strip {
+            display: flex;
+            height: 120px;
+        }
+        
+        .color-box {
+            flex: 1;
+            position: relative;
+            transition: flex 0.3s;
+        }
+        
+        .color-box:hover {
+            flex: 1.5;
+        }
+        
+        .color-code {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .color-box:hover .color-code {
+            opacity: 1;
+        }
+        
+        .installation {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 40px;
+        }
+        
+        .installation h3 {
+            color: #047857;
+            margin-bottom: 15px;
+        }
+        
+        .installation code {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            display: block;
+            font-family: 'Courier New', monospace;
+            color: #1f2937;
+            border: 1px solid #d1fae5;
+        }
+        
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏞️ National Parks Colors</h1>
+            <p>Color palettes inspired by the natural beauty of America's most iconic National Parks</p>
+        </header>
+        
+        <div class="intro">
+            <h2>About This Package</h2>
+            <p>Each palette captures the essence of its National Park through carefully selected colors representing geology, flora, water, and sky. Designed with attention to color theory and data visualization best practices, these palettes work beautifully for both discrete and continuous data.</p>
+        </div>
+        
+        <div class="installation">
+            <h3>📦 Installation</h3>
+            <code>devtools::install_github("username/nationalparkscolors")</code>
+        </div>
+        
+        <div class="palettes">
+            <!-- Yellowstone -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Yellowstone National Park</h3>
+                    <p>Geothermal features, geysers, hot springs, wildlife, and forests. Golden bacterial mats, deep blue pools, orange-brown bison, grey-white steam, and evergreen forests.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #F4E04D;">
+                        <span class="color-code">#F4E04D</span>
+                    </div>
+                    <div class="color-box" style="background-color: #4A90E2;">
+                        <span class="color-code">#4A90E2</span>
+                    </div>
+                    <div class="color-box" style="background-color: #D97826;">
+                        <span class="color-code">#D97826</span>
+                    </div>
+                    <div class="color-box" style="background-color: #8B7D6B;">
+                        <span class="color-code">#8B7D6B</span>
+                    </div>
+                    <div class="color-box" style="background-color: #2C5F2D;">
+                        <span class="color-code">#2C5F2D</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grand Canyon -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Grand Canyon National Park</h3>
+                    <p>Layered sedimentary rock formations from rim to river. Red rock, terracotta, sandy beige, dusty rose, and deep canyon shadows.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #C1440E;">
+                        <span class="color-code">#C1440E</span>
+                    </div>
+                    <div class="color-box" style="background-color: #D4704B;">
+                        <span class="color-code">#D4704B</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8B88A;">
+                        <span class="color-code">#E8B88A</span>
+                    </div>
+                    <div class="color-box" style="background-color: #B8917A;">
+                        <span class="color-code">#B8917A</span>
+                    </div>
+                    <div class="color-box" style="background-color: #4A3728;">
+                        <span class="color-code">#4A3728</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Yosemite -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Yosemite National Park</h3>
+                    <p>Granite cliffs, waterfalls, meadows, and giant sequoias. Granite grey, waterfall mist blue, meadow green, deep pine, and sunset on El Capitan.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #8B9A9D;">
+                        <span class="color-code">#8B9A9D</span>
+                    </div>
+                    <div class="color-box" style="background-color: #B8D4E0;">
+                        <span class="color-code">#B8D4E0</span>
+                    </div>
+                    <div class="color-box" style="background-color: #7CA860;">
+                        <span class="color-code">#7CA860</span>
+                    </div>
+                    <div class="color-box" style="background-color: #3D5941;">
+                        <span class="color-code">#3D5941</span>
+                    </div>
+                    <div class="color-box" style="background-color: #F0C987;">
+                        <span class="color-code">#F0C987</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zion -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Zion National Park</h3>
+                    <p>Red rock canyons, Virgin River, and desert flora. Navajo sandstone red, canyon shadows, river blue-green, sage, and burnt sienna.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #D84A3B;">
+                        <span class="color-code">#D84A3B</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6B4E3D;">
+                        <span class="color-code">#6B4E3D</span>
+                    </div>
+                    <div class="color-box" style="background-color: #5C9EAD;">
+                        <span class="color-code">#5C9EAD</span>
+                    </div>
+                    <div class="color-box" style="background-color: #9FA674;">
+                        <span class="color-code">#9FA674</span>
+                    </div>
+                    <div class="color-box" style="background-color: #A0522D;">
+                        <span class="color-code">#A0522D</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Acadia -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Acadia National Park</h3>
+                    <p>Coastal Maine, granite shores, forests, and ocean. Atlantic ocean blue, coastal granite grey, pink granite, forest green, and lighthouse white.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #2E5266;">
+                        <span class="color-code">#2E5266</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6E8898;">
+                        <span class="color-code">#6E8898</span>
+                    </div>
+                    <div class="color-box" style="background-color: #D49A9A;">
+                        <span class="color-code">#D49A9A</span>
+                    </div>
+                    <div class="color-box" style="background-color: #4A7C59;">
+                        <span class="color-code">#4A7C59</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8DCC4;">
+                        <span class="color-code">#E8DCC4</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rocky Mountain -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Rocky Mountain National Park</h3>
+                    <p>Alpine tundra, wildflowers, and snow-capped peaks. Sky blue, pristine snow, alpine wildflower purple, tundra green, and mountain grey.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #87CEEB;">
+                        <span class="color-code">#87CEEB</span>
+                    </div>
+                    <div class="color-box" style="background-color: #F0F8FF;">
+                        <span class="color-code">#F0F8FF</span>
+                    </div>
+                    <div class="color-box" style="background-color: #9B6B9E;">
+                        <span class="color-code">#9B6B9E</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6B8F71;">
+                        <span class="color-code">#6B8F71</span>
+                    </div>
+                    <div class="color-box" style="background-color: #767B91;">
+                        <span class="color-code">#767B91</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Smokies -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Great Smoky Mountains National Park</h3>
+                    <p>Misty mountains, diverse forests, and wildflowers. Blue mist, mountain green, rhododendron pink, autumn orange, and deep forest.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #748B9E;">
+                        <span class="color-code">#748B9E</span>
+                    </div>
+                    <div class="color-box" style="background-color: #5F7C5D;">
+                        <span class="color-code">#5F7C5D</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8A0BF;">
+                        <span class="color-code">#E8A0BF</span>
+                    </div>
+                    <div class="color-box" style="background-color: #D4824B;">
+                        <span class="color-code">#D4824B</span>
+                    </div>
+                    <div class="color-box" style="background-color: #2F3E2E;">
+                        <span class="color-code">#2F3E2E</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Glacier -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Glacier National Park</h3>
+                    <p>Glacial lakes, mountains, and Going-to-the-Sun Road. Glacial turquoise, mountain grey, wildflower magenta, rocky brown, and forest green.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #4DA6B3;">
+                        <span class="color-code">#4DA6B3</span>
+                    </div>
+                    <div class="color-box" style="background-color: #8B8D8E;">
+                        <span class="color-code">#8B8D8E</span>
+                    </div>
+                    <div class="color-box" style="background-color: #D64E93;">
+                        <span class="color-code">#D64E93</span>
+                    </div>
+                    <div class="color-box" style="background-color: #846658;">
+                        <span class="color-code">#846658</span>
+                    </div>
+                    <div class="color-box" style="background-color: #3B5441;">
+                        <span class="color-code">#3B5441</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Olympic -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Olympic National Park</h3>
+                    <p>Rainforest, Pacific coast, and mountains. Moss green, ocean grey-blue, rain clouds, coastal rocks, and bright ferns.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #6B8F4B;">
+                        <span class="color-code">#6B8F4B</span>
+                    </div>
+                    <div class="color-box" style="background-color: #5C7E8C;">
+                        <span class="color-code">#5C7E8C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #9CA8B3;">
+                        <span class="color-code">#9CA8B3</span>
+                    </div>
+                    <div class="color-box" style="background-color: #4A4A4A;">
+                        <span class="color-code">#4A4A4A</span>
+                    </div>
+                    <div class="color-box" style="background-color: #A3D977;">
+                        <span class="color-code">#A3D977</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Arches -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Arches National Park</h3>
+                    <p>Red rock formations and natural stone arches. Entrada sandstone red, desert sand, arch shadows, evening sky, and oxidized rock.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #C74630;">
+                        <span class="color-code">#C74630</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8C39E;">
+                        <span class="color-code">#E8C39E</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6B5D54;">
+                        <span class="color-code">#6B5D54</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E89E6C;">
+                        <span class="color-code">#E89E6C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #894937;">
+                        <span class="color-code">#894937</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Joshua Tree -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Joshua Tree National Park</h3>
+                    <p>Distinctive desert trees and surreal rock formations. Desert tan, Joshua tree green, granite formations, sunset pink, and star-filled night sky.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #D4B896;">
+                        <span class="color-code">#D4B896</span>
+                    </div>
+                    <div class="color-box" style="background-color: #7A9B76;">
+                        <span class="color-code">#7A9B76</span>
+                    </div>
+                    <div class="color-box" style="background-color: #A68A64;">
+                        <span class="color-code">#A68A64</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8B7A0;">
+                        <span class="color-code">#E8B7A0</span>
+                    </div>
+                    <div class="color-box" style="background-color: #2C3E50;">
+                        <span class="color-code">#2C3E50</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Everglades -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Everglades National Park</h3>
+                    <p>Wetlands, sawgrass marshes, and diverse wildlife. Sawgrass green, tannin-stained water, sunset orange, white ibis, and mangrove forests.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #7C9A5C;">
+                        <span class="color-code">#7C9A5C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6B7C59;">
+                        <span class="color-code">#6B7C59</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E89C5C;">
+                        <span class="color-code">#E89C5C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #F0E8D4;">
+                        <span class="color-code">#F0E8D4</span>
+                    </div>
+                    <div class="color-box" style="background-color: #4A5D4F;">
+                        <span class="color-code">#4A5D4F</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bryce Canyon -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Bryce Canyon National Park</h3>
+                    <p>Hoodoos (rock spires) and unique erosion patterns. Orange-red hoodoos, pink limestone, cream formations, iron-stained red, and shadow purple.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #E87451;">
+                        <span class="color-code">#E87451</span>
+                    </div>
+                    <div class="color-box" style="background-color: #F4A6A3;">
+                        <span class="color-code">#F4A6A3</span>
+                    </div>
+                    <div class="color-box" style="background-color: #F8E5D0;">
+                        <span class="color-code">#F8E5D0</span>
+                    </div>
+                    <div class="color-box" style="background-color: #B8634F;">
+                        <span class="color-code">#B8634F</span>
+                    </div>
+                    <div class="color-box" style="background-color: #8B6F8B;">
+                        <span class="color-code">#8B6F8B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grand Teton -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Grand Teton National Park</h3>
+                    <p>Jagged mountain peaks, alpine lakes, and meadows. Teton peak grey, Jackson Lake blue, wildflower yellow, aspen gold, and evergreen forest.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #8B9197;">
+                        <span class="color-code">#8B9197</span>
+                    </div>
+                    <div class="color-box" style="background-color: #5890B5;">
+                        <span class="color-code">#5890B5</span>
+                    </div>
+                    <div class="color-box" style="background-color: #F4D442;">
+                        <span class="color-code">#F4D442</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8B44C;">
+                        <span class="color-code">#E8B44C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #3F5651;">
+                        <span class="color-code">#3F5651</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Shenandoah -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Shenandoah National Park</h3>
+                    <p>Blue Ridge Mountains, forests, and waterfalls. Blue ridge haze, mountain laurel pink, autumn red, forest green, and weathered rock grey.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #7B8FA3;">
+                        <span class="color-code">#7B8FA3</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8B4C8;">
+                        <span class="color-code">#E8B4C8</span>
+                    </div>
+                    <div class="color-box" style="background-color: #C74C3C;">
+                        <span class="color-code">#C74C3C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #5A7D5F;">
+                        <span class="color-code">#5A7D5F</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6B6F72;">
+                        <span class="color-code">#6B6F72</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Denali -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Denali National Park</h3>
+                    <p>Alaska's highest peak, tundra, and wildlife. Snow-capped peaks, tundra brown-green, clear sky blue, autumn tundra red, and mountain shadows.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #F5F5F5;">
+                        <span class="color-code">#F5F5F5</span>
+                    </div>
+                    <div class="color-box" style="background-color: #8B9467;">
+                        <span class="color-code">#8B9467</span>
+                    </div>
+                    <div class="color-box" style="background-color: #A8C5DD;">
+                        <span class="color-code">#A8C5DD</span>
+                    </div>
+                    <div class="color-box" style="background-color: #B84B4C;">
+                        <span class="color-code">#B84B4C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #5D6874;">
+                        <span class="color-code">#5D6874</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sequoia -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Sequoia National Park</h3>
+                    <p>Giant sequoia trees and Sierra Nevada mountains. Sequoia bark red-brown, forest floor, bark texture, mountain granite, and sky through canopy.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #8B4F39;">
+                        <span class="color-code">#8B4F39</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6B5842;">
+                        <span class="color-code">#6B5842</span>
+                    </div>
+                    <div class="color-box" style="background-color: #A67B5B;">
+                        <span class="color-code">#A67B5B</span>
+                    </div>
+                    <div class="color-box" style="background-color: #9CA3A8;">
+                        <span class="color-code">#9CA3A8</span>
+                    </div>
+                    <div class="color-box" style="background-color: #87CEEB;">
+                        <span class="color-code">#87CEEB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Crater Lake -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Crater Lake National Park</h3>
+                    <p>Deepest lake in the United States. Deep crater lake blue (one of the bluest waters in the world), caldera rim grey, sky reflection, volcanic rock, and snow.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #003F87;">
+                        <span class="color-code">#003F87</span>
+                    </div>
+                    <div class="color-box" style="background-color: #6B7C8C;">
+                        <span class="color-code">#6B7C8C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #87B5D6;">
+                        <span class="color-code">#87B5D6</span>
+                    </div>
+                    <div class="color-box" style="background-color: #54555A;">
+                        <span class="color-code">#54555A</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8F0F5;">
+                        <span class="color-code">#E8F0F5</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Death Valley -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Death Valley National Park</h3>
+                    <p>Extreme desert, salt flats, and colorful badlands. White salt flats, Artist's Palette pink, desert gold, volcanic black rocks, and oxidized green minerals.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #F4F1E8;">
+                        <span class="color-code">#F4F1E8</span>
+                    </div>
+                    <div class="color-box" style="background-color: #E8A4B8;">
+                        <span class="color-code">#E8A4B8</span>
+                    </div>
+                    <div class="color-box" style="background-color: #D4A449;">
+                        <span class="color-code">#D4A449</span>
+                    </div>
+                    <div class="color-box" style="background-color: #3A3A3A;">
+                        <span class="color-code">#3A3A3A</span>
+                    </div>
+                    <div class="color-box" style="background-color: #8B9B76;">
+                        <span class="color-code">#8B9B76</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Badlands -->
+            <div class="palette-card">
+                <div class="palette-header">
+                    <h3>Badlands National Park</h3>
+                    <p>Layered rock formations and mixed-grass prairie. Yellow mounds, eroded pink-red formations, prairie grass, layered grey sediments, and sunset gold.</p>
+                </div>
+                <div class="color-strip">
+                    <div class="color-box" style="background-color: #E8D4A0;">
+                        <span class="color-code">#E8D4A0</span>
+                    </div>
+                    <div class="color-box" style="background-color: #D47C7C;">
+                        <span class="color-code">#D47C7C</span>
+                    </div>
+                    <div class="color-box" style="background-color: #A8B46F;">
+                        <span class="color-code">#A8B46F</span>
+                    </div>
+                    <div class="color-box" style="background-color: #8B8680;">
+                        <span class="color-code">#8B8680</span>
+                    </div>
+                    <div class="color-box" style="background-color: #F0C668;">
+                        <span class="color-code">#F0C668</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Inspired by the natural beauty of America's National Parks</p>
+            <p style="margin-top: 10px; opacity: 0.8;">
+                Consider supporting the <a href="https://www.nationalparks.org/" target="_blank">National Park Foundation</a> 
+                to help preserve these landscapes for future generations
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

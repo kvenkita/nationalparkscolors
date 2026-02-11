@@ -1,0 +1,19 @@
+Package: nationalparkscolors
+Title: Color Palettes Inspired by US National Parks
+Description: Color palettes inspired by the scenery and natural beauty of 20 popular 
+    United States National Parks. Palettes are designed with attention to color theory
+    and data visualization best practices, capturing the essence of each park's unique
+    landscapes, geology, and flora.
+Date: 2026-02-10
+Version: 0.1.0
+Authors@R: c(person("Kailas", "Venkitasubramanian", role = c("aut", "cre"),
+    email = "kailasv@gmail.com"))
+Depends:
+    R (>= 3.0)
+License: MIT + file LICENSE
+LazyData: true
+Suggests:
+    ggplot2
+URL: https://github.com/kvenkita/nationalparkscolors
+BugReports: https://github.com/kvenkita/nationalparkscolors/issues
+RoxygenNote: 7.0.0
