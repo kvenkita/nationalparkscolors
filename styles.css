@@ -1,0 +1,207 @@
+/* Custom styles for National Parks Colors Visualization Gallery */
+
+/* Header banner styling */
+.header-banner {
+  background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);
+  color: white;
+  padding: 40px;
+  margin: -20px -20px 30px -20px;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+}
+
+.header-banner h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.header-banner p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  opacity: 0.95;
+}
+
+/* Footer banner styling */
+.footer-banner {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px;
+  margin: 40px -20px -20px -20px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  border-top: 3px solid #3d5a6c;
+}
+
+.footer-banner h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Navigation link styling */
+.nav-link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 8px 16px;
+  border: 2px solid #60a5fa;
+  border-radius: 5px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #60a5fa;
+  color: white;
+  text-decoration: none;
+}
+
+/* Code block improvements */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+code {
+  background-color: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Plot styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+}
+
+/* Section headers */
+h1 {
+  color: #2c3e50;
+  border-bottom: 3px solid #3d5a6c;
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
+
+h2 {
+  color: #3d5a6c;
+  margin-top: 30px;
+}
+
+h3 {
+  color: #5a6c7d;
+  margin-top: 25px;
+}
+
+/* Table of contents */
+#TOC {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+#TOC ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#TOC li {
+  margin: 8px 0;
+}
+
+#TOC a {
+  color: #3d5a6c;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#TOC a:hover {
+  color: #60a5fa;
+}
+
+/* Improve overall readability */
+body {
+  line-height: 1.8;
+  color: #333;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+/* Horizontal rules */
+hr {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #dee2e6, transparent);
+  margin: 40px 0;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Emphasis */
+strong {
+  color: #2c3e50;
+}
+
+em {
+  color: #5a6c7d;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #3d5a6c;
+  padding-left: 20px;
+  margin-left: 0;
+  color: #5a6c7d;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-banner h1 {
+    font-size: 1.8em;
+  }
+  
+  .header-banner p {
+    font-size: 1em;
+  }
+  
+  img {
+    margin: 10px 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header-banner,
+  .footer-banner {
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+  }
+  
+  .nav-link {
+    display: none;
+  }
+  
+  img {
+    box-shadow: none;
+  }
+}

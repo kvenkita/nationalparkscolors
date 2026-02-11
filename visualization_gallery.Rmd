@@ -1,0 +1,698 @@
+---
+title: "National Parks Colors - Data Visualization Gallery"
+author: "nationalparkscolors package"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    code_folding: show
+    highlight: tango
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 10,
+  fig.height = 6,
+  dpi = 300
+)
+
+# Load required libraries
+library(nationalparkscolors)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(maps)
+library(mapproj)
+
+# Set default theme
+theme_set(theme_minimal(base_size = 13))
+```
+
+<div class="header-banner">
+  <h1>🏞️ National Parks Colors Visualization Gallery</h1>
+  <p>Beautiful data visualizations using color palettes inspired by America's National Parks</p>
+  <p><a href="palette_showcase.html" class="nav-link">← Back to Palette Showcase</a></p>
+</div>
+
+---
+
+# Introduction
+
+This gallery demonstrates the **nationalparkscolors** package with real-world data visualization examples. Each palette is designed to bring the natural beauty of America's National Parks to your data stories.
+
+## Quick Installation
+
+```{r, eval=FALSE}
+devtools::install_github("username/nationalparkscolors")
+library(nationalparkscolors)
+```
+
+---
+
+# Scatter Plots
+
+## Classic: Iris Dataset with Acadia Palette
+
+The **Acadia** palette captures the coastal beauty of Maine with ocean blues and granite greys.
+
+```{r scatter_iris}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  scale_color_manual(values = natparks_palette("Acadia")) +
+  labs(
+    title = "Iris Species Measurements",
+    subtitle = "Using the Acadia National Park palette",
+    x = "Sepal Length (cm)",
+    y = "Sepal Width (cm)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "bottom"
+  )
+```
+
+## Cars Dataset with Glacier Palette
+
+The **Glacier** palette brings glacial lake colors to automotive data.
+
+```{r scatter_cars}
+ggplot(mtcars, aes(x = wt, y = mpg, color = hp, size = disp)) +
+  geom_point(alpha = 0.7) +
+  scale_color_gradientn(colors = natparks_palette("Glacier", type = "continuous")) +
+  scale_size_continuous(range = c(3, 10)) +
+  labs(
+    title = "Vehicle Performance Characteristics",
+    subtitle = "Using the Glacier National Park palette (continuous)",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Horsepower",
+    size = "Displacement"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "right"
+  )
+```
+
+---
+
+# Bar Charts
+
+## Simple Bar Chart with Yellowstone Palette
+
+The **Yellowstone** palette showcases the park's geothermal diversity.
+
+```{r bar_simple}
+# Create sample data
+park_visitors <- data.frame(
+  Park = c("Yellowstone", "Grand Canyon", "Yosemite", "Zion", "Acadia"),
+  Visitors = c(4.86, 5.97, 3.67, 4.69, 3.97),
+  stringsAsFactors = FALSE
+)
+
+ggplot(park_visitors, aes(x = reorder(Park, Visitors), y = Visitors, fill = Park)) +
+  geom_col(show.legend = FALSE, width = 0.7) +
+  scale_fill_manual(values = natparks_palette("Yellowstone")) +
+  coord_flip() +
+  labs(
+    title = "National Park Visitors (2023)",
+    subtitle = "Millions of visitors - Using Yellowstone palette",
+    x = NULL,
+    y = "Visitors (Millions)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    panel.grid.major.y = element_blank()
+  )
+```
+
+## Grouped Bar Chart with Grand Teton Palette
+
+The **Grand Teton** palette evokes alpine meadows and mountain peaks.
+
+```{r bar_grouped}
+# Sample quarterly data
+quarterly_data <- data.frame(
+  Quarter = rep(c("Q1", "Q2", "Q3", "Q4"), each = 3),
+  Category = rep(c("Product A", "Product B", "Product C"), 4),
+  Sales = c(23, 45, 32, 28, 52, 38, 35, 58, 42, 40, 65, 48)
+)
+
+ggplot(quarterly_data, aes(x = Quarter, y = Sales, fill = Category)) +
+  geom_col(position = "dodge", width = 0.7) +
+  scale_fill_manual(values = natparks_palette("GrandTeton")) +
+  labs(
+    title = "Quarterly Sales by Product Category",
+    subtitle = "Using the Grand Teton National Park palette",
+    x = "Quarter",
+    y = "Sales (thousands)",
+    fill = "Product"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "bottom"
+  )
+```
+
+## Stacked Bar Chart with Smokies Palette
+
+The **Smokies** palette reflects the misty mountains and diverse forests.
+
+```{r bar_stacked}
+ggplot(quarterly_data, aes(x = Quarter, y = Sales, fill = Category)) +
+  geom_col(position = "stack", width = 0.7) +
+  scale_fill_manual(values = natparks_palette("Smokies")) +
+  labs(
+    title = "Total Quarterly Sales Composition",
+    subtitle = "Using the Great Smoky Mountains palette",
+    x = "Quarter",
+    y = "Total Sales (thousands)",
+    fill = "Product"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "bottom"
+  )
+```
+
+---
+
+# Line Charts
+
+## Time Series with Crater Lake Palette
+
+The **Crater Lake** palette showcases the lake's famous deep blue colors.
+
+```{r line_timeseries}
+# Use economics dataset
+economics_subset <- economics %>%
+  filter(date >= as.Date("2000-01-01"))
+
+ggplot(economics_subset, aes(x = date, y = unemploy / 1000)) +
+  geom_line(color = natparks_palette("CraterLake")[1], size = 1.2) +
+  geom_area(fill = natparks_palette("CraterLake")[1], alpha = 0.3) +
+  labs(
+    title = "US Unemployment Over Time",
+    subtitle = "Using Crater Lake palette for a water-like effect",
+    x = "Year",
+    y = "Unemployed (Millions)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Multiple Lines with Zion Palette
+
+The **Zion** palette features red rock canyon colors.
+
+```{r line_multiple}
+# Reshape economics data for multiple lines
+econ_long <- economics %>%
+  filter(date >= as.Date("2010-01-01")) %>%
+  select(date, unemploy, pop) %>%
+  mutate(
+    unemploy = unemploy / 1000,
+    pop = pop / 1000
+  ) %>%
+  pivot_longer(cols = c(unemploy, pop), names_to = "metric", values_to = "value")
+
+ggplot(econ_long, aes(x = date, y = value, color = metric)) +
+  geom_line(size = 1.2) +
+  scale_color_manual(
+    values = natparks_palette("Zion")[c(1, 3)],
+    labels = c("Population (000s)", "Unemployed (000s)")
+  ) +
+  facet_wrap(~metric, scales = "free_y", ncol = 1) +
+  labs(
+    title = "US Economic Indicators",
+    subtitle = "Using the Zion National Park palette",
+    x = "Year",
+    y = "Value"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "none",
+    strip.text = element_text(face = "bold", size = 12)
+  )
+```
+
+---
+
+# Density Plots
+
+## Single Density with Yosemite Palette
+
+The **Yosemite** palette captures granite cliffs and waterfall mist.
+
+```{r density_single}
+ggplot(diamonds, aes(x = price)) +
+  geom_density(fill = natparks_palette("Yosemite")[3], 
+               color = natparks_palette("Yosemite")[4], 
+               alpha = 0.7, 
+               size = 1) +
+  scale_x_continuous(labels = scales::dollar_format()) +
+  labs(
+    title = "Distribution of Diamond Prices",
+    subtitle = "Using the Yosemite National Park palette",
+    x = "Price",
+    y = "Density"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18)
+  )
+```
+
+## Multiple Densities with Bryce Canyon Palette
+
+The **Bryce Canyon** palette reflects the park's famous hoodoos and rock formations.
+
+```{r density_multiple}
+ggplot(diamonds, aes(x = price, fill = cut)) +
+  geom_density(alpha = 0.6) +
+  scale_fill_manual(values = natparks_palette("BryceCanyon")) +
+  scale_x_continuous(labels = scales::dollar_format(), limits = c(0, 20000)) +
+  labs(
+    title = "Diamond Price Distribution by Cut Quality",
+    subtitle = "Using the Bryce Canyon National Park palette",
+    x = "Price",
+    y = "Density",
+    fill = "Cut Quality"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "bottom"
+  )
+```
+
+---
+
+# Box Plots and Violin Plots
+
+## Box Plot with Grand Canyon Palette
+
+The **Grand Canyon** palette showcases layered sedimentary rocks.
+
+```{r boxplot}
+ggplot(mpg, aes(x = class, y = hwy, fill = class)) +
+  geom_boxplot(show.legend = FALSE, alpha = 0.8) +
+  scale_fill_manual(values = rep(natparks_palette("GrandCanyon"), 2)) +
+  coord_flip() +
+  labs(
+    title = "Highway Fuel Efficiency by Vehicle Class",
+    subtitle = "Using the Grand Canyon National Park palette",
+    x = "Vehicle Class",
+    y = "Highway MPG"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    panel.grid.major.y = element_blank()
+  )
+```
+
+## Violin Plot with Sequoia Palette
+
+The **Sequoia** palette represents giant sequoia trees and Sierra Nevada mountains.
+
+```{r violin}
+ggplot(diamonds %>% filter(cut %in% c("Fair", "Good", "Very Good", "Premium", "Ideal")), 
+       aes(x = cut, y = carat, fill = cut)) +
+  geom_violin(show.legend = FALSE, alpha = 0.8) +
+  scale_fill_manual(values = natparks_palette("Sequoia")) +
+  labs(
+    title = "Diamond Carat Distribution by Cut Quality",
+    subtitle = "Using the Sequoia National Park palette",
+    x = "Cut Quality",
+    y = "Carat"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18)
+  )
+```
+
+---
+
+# Heatmaps
+
+## Correlation Heatmap with Death Valley Palette
+
+The **Death Valley** palette captures extreme desert colors.
+
+```{r heatmap_correlation}
+# Create correlation matrix
+mtcars_cor <- cor(mtcars[, 1:7])
+mtcars_cor_df <- as.data.frame(as.table(mtcars_cor))
+names(mtcars_cor_df) <- c("Var1", "Var2", "Correlation")
+
+ggplot(mtcars_cor_df, aes(x = Var1, y = Var2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  scale_fill_gradientn(
+    colors = natparks_palette("DeathValley", 100, type = "continuous"),
+    limits = c(-1, 1)
+  ) +
+  geom_text(aes(label = round(Correlation, 2)), size = 3) +
+  labs(
+    title = "Vehicle Characteristics Correlation Matrix",
+    subtitle = "Using the Death Valley National Park palette",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid = element_blank()
+  )
+```
+
+## Tile Heatmap with Olympic Palette
+
+The **Olympic** palette reflects rainforest and coastal environments.
+
+```{r heatmap_tile}
+# Create sample monthly data
+months <- month.abb
+years <- 2020:2024
+heatmap_data <- expand.grid(Month = months, Year = years)
+set.seed(42)
+heatmap_data$Value <- runif(nrow(heatmap_data), 10, 100)
+heatmap_data$Month <- factor(heatmap_data$Month, levels = month.abb)
+
+ggplot(heatmap_data, aes(x = Year, y = Month, fill = Value)) +
+  geom_tile(color = "white", size = 0.5) +
+  scale_fill_gradientn(colors = natparks_palette("Olympic", 100, type = "continuous")) +
+  scale_x_continuous(breaks = 2020:2024) +
+  labs(
+    title = "Monthly Performance Heatmap",
+    subtitle = "Using the Olympic National Park palette",
+    x = "Year",
+    y = "Month",
+    fill = "Value"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    panel.grid = element_blank()
+  )
+```
+
+---
+
+# Faceted Plots
+
+## Facet Wrap with Arches Palette
+
+The **Arches** palette features red sandstone formations.
+
+```{r facet_wrap}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
+  geom_point(size = 2, alpha = 0.7) +
+  facet_wrap(~year, ncol = 2) +
+  scale_color_manual(values = rep(natparks_palette("Arches"), 2)) +
+  labs(
+    title = "Engine Displacement vs Highway MPG",
+    subtitle = "Comparing 1999 and 2008 models - Using Arches palette",
+    x = "Engine Displacement (L)",
+    y = "Highway MPG",
+    color = "Vehicle Class"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "bottom",
+    strip.text = element_text(face = "bold", size = 12)
+  )
+```
+
+## Facet Grid with Shenandoah Palette
+
+The **Shenandoah** palette captures Blue Ridge Mountains and autumn colors.
+
+```{r facet_grid}
+ggplot(diamonds %>% 
+         filter(cut %in% c("Fair", "Good", "Ideal")) %>%
+         sample_n(1000), 
+       aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.6, size = 1.5) +
+  facet_grid(cut ~ clarity) +
+  scale_color_manual(values = rep(natparks_palette("Shenandoah"), 2)) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(
+    title = "Diamond Prices by Cut and Clarity",
+    subtitle = "Using the Shenandoah National Park palette",
+    x = "Carat",
+    y = "Price",
+    color = "Color Grade"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16),
+    legend.position = "bottom",
+    strip.text = element_text(face = "bold", size = 10)
+  )
+```
+
+---
+
+# Maps
+
+## US State Map with RockyMountain Palette
+
+The **Rocky Mountain** palette features alpine tundra and snow-capped peaks.
+
+```{r map_states, fig.height=7}
+# Get US state map data
+us_states <- map_data("state")
+us_states$region <- tools::toTitleCase(us_states$region)
+
+# Create sample state data
+state_data <- data.frame(
+  region = unique(us_states$region),
+  value = runif(length(unique(us_states$region)), 0, 100)
+)
+
+# Merge with map data
+us_states <- left_join(us_states, state_data, by = "region")
+
+ggplot(us_states, aes(x = long, y = lat, group = group, fill = value)) +
+  geom_polygon(color = "white", size = 0.2) +
+  scale_fill_gradientn(
+    colors = natparks_palette("RockyMountain", 100, type = "continuous"),
+    name = "Value"
+  ) +
+  coord_map("albers", lat0 = 39, lat1 = 45) +
+  labs(
+    title = "United States - Sample Data Visualization",
+    subtitle = "Using the Rocky Mountain National Park palette"
+  ) +
+  theme_void(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18, hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "right"
+  )
+```
+
+---
+
+# Advanced Examples
+
+## Ridgeline Plot with Denali Palette
+
+The **Denali** palette reflects Alaska's tundra and mountain landscapes.
+
+```{r ridgeline, fig.height=8}
+# Prepare data
+lincoln_temps <- data.frame(
+  Month = rep(month.name, each = 30),
+  Temperature = c(
+    rnorm(30, 25, 5),  # Jan
+    rnorm(30, 30, 5),  # Feb
+    rnorm(30, 40, 5),  # Mar
+    rnorm(30, 55, 5),  # Apr
+    rnorm(30, 65, 5),  # May
+    rnorm(30, 75, 5),  # Jun
+    rnorm(30, 80, 5),  # Jul
+    rnorm(30, 78, 5),  # Aug
+    rnorm(30, 70, 5),  # Sep
+    rnorm(30, 58, 5),  # Oct
+    rnorm(30, 42, 5),  # Nov
+    rnorm(30, 28, 5)   # Dec
+  )
+)
+lincoln_temps$Month <- factor(lincoln_temps$Month, levels = rev(month.name))
+
+ggplot(lincoln_temps, aes(x = Temperature, y = Month, fill = Month)) +
+  ggridges::geom_density_ridges(alpha = 0.8, scale = 3, show.legend = FALSE) +
+  scale_fill_manual(values = rep(natparks_palette("Denali"), 3)) +
+  labs(
+    title = "Temperature Distribution by Month",
+    subtitle = "Using the Denali National Park palette",
+    x = "Temperature (°F)",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18)
+  )
+```
+
+## Lollipop Chart with Joshua Tree Palette
+
+The **Joshua Tree** palette captures desert landscapes and night skies.
+
+```{r lollipop}
+# Create sample data
+park_scores <- data.frame(
+  Park = c("Yellowstone", "Yosemite", "Grand Canyon", "Zion", "Glacier",
+           "Acadia", "Denali", "Olympic", "Arches", "Bryce Canyon"),
+  Score = c(9.2, 9.5, 9.7, 9.1, 9.4, 8.8, 9.0, 8.9, 9.3, 9.6)
+) %>%
+  arrange(Score)
+
+park_scores$Park <- factor(park_scores$Park, levels = park_scores$Park)
+
+ggplot(park_scores, aes(x = Park, y = Score)) +
+  geom_segment(aes(x = Park, xend = Park, y = 0, yend = Score),
+               color = natparks_palette("JoshuaTree")[1], size = 1.5) +
+  geom_point(color = natparks_palette("JoshuaTree")[5], size = 5) +
+  coord_flip() +
+  ylim(0, 10) +
+  labs(
+    title = "National Park Visitor Satisfaction Scores",
+    subtitle = "Using the Joshua Tree National Park palette",
+    x = NULL,
+    y = "Satisfaction Score (out of 10)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Waffle Chart Concept with Everglades Palette
+
+The **Everglades** palette represents wetlands and sawgrass marshes.
+
+```{r waffle_concept}
+# Create sample categorical data
+survey_data <- data.frame(
+  Response = c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"),
+  Count = c(45, 30, 15, 7, 3)
+)
+
+ggplot(survey_data, aes(x = "", y = Count, fill = Response)) +
+  geom_col(width = 1) +
+  scale_fill_manual(values = natparks_palette("Everglades")) +
+  coord_polar(theta = "y") +
+  labs(
+    title = "Survey Response Distribution",
+    subtitle = "Using the Everglades National Park palette",
+    fill = "Response"
+  ) +
+  theme_void(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18, hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "right"
+  )
+```
+
+---
+
+# Combining Multiple Palettes
+
+## Creative Comparison with Badlands Palette
+
+The **Badlands** palette features layered rock formations and prairie.
+
+```{r combined_example}
+# Create faceted comparison
+comparison_data <- data.frame(
+  x = rep(1:10, 4),
+  y = c(
+    cumsum(rnorm(10, 0.5, 0.3)),
+    cumsum(rnorm(10, 0.3, 0.2)),
+    cumsum(rnorm(10, 0.7, 0.4)),
+    cumsum(rnorm(10, 0.4, 0.3))
+  ),
+  Category = rep(c("A", "B", "C", "D"), each = 10)
+)
+
+ggplot(comparison_data, aes(x = x, y = y, color = Category, fill = Category)) +
+  geom_line(size = 1.2) +
+  geom_ribbon(aes(ymin = 0, ymax = y), alpha = 0.3) +
+  scale_color_manual(values = natparks_palette("Badlands")[1:4]) +
+  scale_fill_manual(values = natparks_palette("Badlands")[1:4]) +
+  facet_wrap(~Category, ncol = 2, scales = "free_y") +
+  labs(
+    title = "Growth Trajectories by Category",
+    subtitle = "Using the Badlands National Park palette",
+    x = "Time Period",
+    y = "Cumulative Value"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    legend.position = "none",
+    strip.text = element_text(face = "bold", size = 12)
+  )
+```
+
+---
+
+# Tips for Effective Visualization
+
+## Best Practices
+
+1. **Match palette to data context**: Use ocean/water palettes (Crater Lake, Acadia) for water-related data
+2. **Consider color count**: Most palettes have 5 colors; use `type = "continuous"` for more
+3. **Test accessibility**: Ensure sufficient contrast for all viewers
+4. **Stay consistent**: Use the same palette family for related visualizations
+5. **Let data shine**: Don't let colors overwhelm the message
+
+## Palette Selection Guide
+
+- **Categorical data (3-5 categories)**: Use discrete palettes as-is
+- **Continuous data**: Add `type = "continuous"` for smooth gradients
+- **Diverging data**: Choose palettes with warm-to-cool transitions
+- **Maps**: Use single-color gradients (e.g., Crater Lake blues)
+- **Time series**: Consider palettes with calm, flowing colors
+
+---
+
+<div class="footer-banner">
+  <h2>Explore More</h2>
+  <p><a href="palette_showcase.html" class="nav-link">View All Palettes →</a></p>
+  <p>Created with the nationalparkscolors package</p>
+  <p style="font-size: 0.9em; opacity: 0.8;">Inspired by the natural beauty of America's National Parks</p>
+</div>
+
+---
+
+# Session Information
+
+```{r session_info}
+sessionInfo()
+```
