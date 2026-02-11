@@ -136,6 +136,10 @@ Each palette was designed with attention to:
 
 For a visual demonstration of all palettes, open `palette_showcase.html` in your browser after installing the package.
 
+### [Visual Palette Showcase](https://kvenkita.github.io/nationalparkscolors/palette_showcase.html)
+
+### [Visualization Gallery with the palettes](https://kvenkita.github.io/nationalparkscolors/visualization_gallery.html)
+
 ## Contributing
 
 Contributions are welcome! To suggest improvements or new palettes:
