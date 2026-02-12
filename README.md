@@ -110,16 +110,6 @@ pal <- natparks_palette("Yosemite", 100, type = "continuous")
 image(volcano, col = pal)
 ```
 
-## Color Palette Details
-
-| Park | Primary Colors | Inspiration |
-|------|---------------|-------------|
-| Yellowstone | Yellow, Blue, Orange, Grey, Green | Geothermal features, hot springs, wildlife |
-| Grand Canyon | Red, Terracotta, Beige, Rose, Brown | Layered sedimentary rock |
-| Yosemite | Grey, Blue, Green, Pine, Gold | Granite, waterfalls, meadows |
-| Crater Lake | Deep Blue, Grey, Sky Blue, Black, White | Deepest blue lake water |
-| Glacier | Turquoise, Grey, Magenta, Brown, Green | Glacial lakes, wildflowers |
-
 *[See USAGE_GUIDE.md for complete palette details]*
 
 ## Design Philosophy
