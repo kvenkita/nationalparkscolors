@@ -85,26 +85,26 @@ heatmap(as.matrix(mtcars), col = pal)
 
 ## All Available Palettes
 
-1. **Yellowstone** - Geothermal features, geysers, hot springs
-2. **GrandCanyon** - Layered rock formations
-3. **Yosemite** - Granite cliffs, waterfalls, meadows
-4. **Zion** - Red rock canyons, Virgin River
-5. **Acadia** - Coastal Maine, granite shores
-6. **RockyMountain** - Alpine tundra, wildflowers
-7. **Smokies** - Misty mountains, diverse forests
-8. **Glacier** - Glacial lakes, mountains
-9. **Olympic** - Rainforest, coast, mountains
-10. **Arches** - Red rock formations, natural arches
-11. **JoshuaTree** - Desert landscape, distinctive trees
-12. **Everglades** - Wetlands, sawgrass, wildlife
-13. **BryceCanyon** - Hoodoos, unique erosion
-14. **GrandTeton** - Jagged peaks, alpine lakes
-15. **Shenandoah** - Blue Ridge Mountains
-16. **Denali** - Alaska's highest peak, tundra
-17. **Sequoia** - Giant sequoia trees
-18. **CraterLake** - Deepest lake in US
-19. **DeathValley** - Extreme desert, salt flats
-20. **Badlands** - Layered formations, prairie
+1. **Yellowstone**
+2. **GrandCanyon**
+3. **Yosemite**
+4. **Zion**
+5. **Acadia**
+6. **RockyMountain**
+7. **Smokies**
+8. **Glacier**
+9. **Olympic**
+10. **Arches**
+11. **JoshuaTree**
+12. **Everglades**
+13. **BryceCanyon**
+14. **GrandTeton**
+15. **Shenandoah**
+16. **Denali**
+17. **Sequoia**
+18. **CraterLake**
+19. **DeathValley**
+20. **Badlands**
 
 ## Tips
 
