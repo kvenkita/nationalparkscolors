@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 > "In every walk with nature, one receives far more than he seeks." - John Muir
 
-Bring the beauty of America's National Parks to your data visualizations! This package provides 20 carefully crafted color palettes inspired by the natural landscapes, geology, and ecosystems of popular US National Parks.
+Bring the beauty of America's National Parks to your data visualizations! This package provides 21 carefully crafted color palettes inspired by the natural landscapes, geology, and ecosystems of popular US National Parks.
 
 Each palette captures the essence of its park through colors drawn from iconic features: the geothermal wonders of Yellowstone, the layered rock formations of the Grand Canyon, the granite cliffs of Yosemite, and more.
 
@@ -221,6 +221,15 @@ Yellow mounds, eroded pink-red formations, prairie grass, layered grey sediments
 natparks_palette("Badlands")
 ```
 
+### Big Bend National Park
+*Chisos Mountains, Santa Elena Canyon, Rio Grande, and Chihuahuan Desert*
+
+Santa Elena limestone canyon walls, Chisos Mountain twilight purple, dramatic desert sunset orange, Rio Grande green, and Chihuahuan Desert sand.
+
+```{r, bigbend}
+natparks_palette("BigBend")
+```
+
 ## Using with ggplot2
 
 ```{r, ggplot_example, fig.height = 3}
@@ -305,6 +314,7 @@ Each palette was designed with careful attention to:
 | Crater Lake | 5 | Deepest blue lake, volcanic caldera |
 | Death Valley | 5 | Extreme desert, salt flats, badlands |
 | Badlands | 5 | Layered formations, prairie grasslands |
+| Big Bend | 5 | Chisos Mountains, Rio Grande, desert |
 
 ## Contributing
 

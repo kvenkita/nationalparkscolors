@@ -4,7 +4,7 @@
 \name{natparks_palettes}
 \alias{natparks_palettes}
 \title{Complete list of palettes}
-\format{An object of class \code{list} of length 20.}
+\format{An object of class \code{list} of length 21.}
 \usage{
 natparks_palettes
 }

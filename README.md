@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![R](https://img.shields.io/badge/R-%3E%3D3.0-blue)](https://www.r-project.org/)
 
-Bring the beauty of America's National Parks to your data visualizations! This R package provides 20 carefully crafted color palettes inspired by the natural landscapes, geology, and ecosystems of popular US National Parks.
+Bring the beauty of America's National Parks to your data visualizations! This R package provides 21 carefully crafted color palettes inspired by the natural landscapes, geology, and ecosystems of popular US National Parks.
 
 ## Installation
 
@@ -57,6 +57,7 @@ Each palette captures the essence of its park through 5 carefully selected color
 - **Sequoia** - Giant sequoia bark, forest, Sierra Nevada
 - **CraterLake** - Deepest blue lake in US, volcanic caldera
 - **DeathValley** - Salt flats, Artist's Palette, extreme desert
+- **BigBend** - Chisos Mountains, Rio Grande, Chihuahuan Desert
 
 ### Eastern Parks
 

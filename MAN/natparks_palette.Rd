@@ -12,7 +12,8 @@ natparks_palette(name, n, type = c("discrete", "continuous"))
 \code{Acadia}, \code{RockyMountain}, \code{Smokies}, \code{Glacier},
 \code{Olympic}, \code{Arches}, \code{JoshuaTree}, \code{Everglades},
 \code{BryceCanyon}, \code{GrandTeton}, \code{Shenandoah}, \code{Denali},
-\code{Sequoia}, \code{CraterLake}, \code{DeathValley}, \code{Badlands}}
+\code{Sequoia}, \code{CraterLake}, \code{DeathValley}, \code{Badlands},
+\code{BigBend}}
 
 \item{n}{Number of colors desired. All palettes have 5-7 colors.
 If omitted, uses all colours.}
@@ -25,7 +26,7 @@ to automatically interpolate between colours.
 A vector of colours.
 }
 \description{
-Color palettes inspired by the natural beauty and landscapes of 20 popular
+Color palettes inspired by the natural beauty and landscapes of 21 popular
 US National Parks. Each palette captures the essence of its park through
 carefully selected colors representing geology, flora, water, and sky.
 }
