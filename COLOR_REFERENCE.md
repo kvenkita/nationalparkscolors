@@ -302,6 +302,21 @@
 
 ---
 
+### Big Bend National Park
+**Theme**: Chisos Mountains, Santa Elena Canyon, Rio Grande, Chihuahuan Desert
+
+| Color Name | Hex Code | RGB | Description |
+|------------|----------|-----|-------------|
+| Santa Elena Limestone | #C2894D | (194, 137, 77) | Canyon walls |
+| Chisos Twilight | #6A5B86 | (106, 91, 134) | Mountain silhouettes |
+| Desert Sunset | #E8874A | (232, 135, 74) | Evening sky |
+| Rio Grande Green | #4D8B6F | (77, 139, 111) | River waters |
+| Chihuahuan Sand | #D6C19A | (214, 193, 154) | Desert landscape |
+
+**R Code**: `natparks_palette("BigBend")`
+
+---
+
 ## Usage Tips
 
 ### Accessing Colors by Index

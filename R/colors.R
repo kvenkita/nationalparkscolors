@@ -82,12 +82,16 @@ natparks_palettes <- list(
   
   # Badlands - Layered rock formations, prairie
   # Yellow mounds, eroded pink-red, prairie grass, layered grey, sunset gold
-  Badlands = c("#E8D4A0", "#D47C7C", "#A8B46F", "#8B8680", "#F0C668")
+  Badlands = c("#E8D4A0", "#D47C7C", "#A8B46F", "#8B8680", "#F0C668"),
+
+  # Big Bend - Chisos Mountains, Santa Elena Canyon, Rio Grande, Chihuahuan Desert
+  # Santa Elena limestone, Chisos twilight purple, desert sunset orange, Rio Grande green, Chihuahuan sand
+  BigBend = c("#C2894D", "#6A5B86", "#E8874A", "#4D8B6F", "#D6C19A")
 )
 
 #' A US National Parks palette generator
 #'
-#' Color palettes inspired by the natural beauty and landscapes of 20 popular
+#' Color palettes inspired by the natural beauty and landscapes of 21 popular
 #' US National Parks. Each palette captures the essence of its park through
 #' carefully selected colors representing geology, flora, water, and sky.
 #'
@@ -98,7 +102,8 @@ natparks_palettes <- list(
 #'   \code{Acadia}, \code{RockyMountain}, \code{Smokies}, \code{Glacier},
 #'   \code{Olympic}, \code{Arches}, \code{JoshuaTree}, \code{Everglades},
 #'   \code{BryceCanyon}, \code{GrandTeton}, \code{Shenandoah}, \code{Denali},
-#'   \code{Sequoia}, \code{CraterLake}, \code{DeathValley}, \code{Badlands}
+#'   \code{Sequoia}, \code{CraterLake}, \code{DeathValley}, \code{Badlands},
+#'   \code{BigBend}
 #' @param type Either "continuous" or "discrete". Use continuous if you want
 #'   to automatically interpolate between colours.
 #' @importFrom graphics rgb rect par image text

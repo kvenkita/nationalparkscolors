@@ -1,7 +1,7 @@
 # NATIONAL PARKS COLORS - QUICK START GUIDE
 
 ## Package Overview
-An R package providing 20 color palettes inspired by US National Parks, designed for data visualization.
+An R package providing 21 color palettes inspired by US National Parks, designed for data visualization.
 
 ## Installation
 
@@ -28,7 +28,7 @@ names(natparks_palettes)
 #          "RockyMountain", "Smokies", "Glacier", "Olympic", "Arches",
 #          "JoshuaTree", "Everglades", "BryceCanyon", "GrandTeton",
 #          "Shenandoah", "Denali", "Sequoia", "CraterLake", 
-#          "DeathValley", "Badlands"
+#          "DeathValley", "Badlands", "BigBend"
 ```
 
 ### Use a Palette
@@ -153,7 +153,7 @@ nationalparkscolors/
 
 ## Visual Reference
 
-Open `palette_showcase.html` in your web browser to see all 20 palettes with:
+Open `palette_showcase.html` in your web browser to see all 21 palettes with:
 - Color swatches
 - Hex codes
 - Park descriptions
